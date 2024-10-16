@@ -57,10 +57,7 @@ const Menu: React.FC = () => {
 
   return (
     <div className="menu-page">
-      <div className="menu-heading">
-        <span className="line1">Discover</span>
-        <h1 className="line2">{styleAlternateWords("Our Dining Menu")}</h1>
-      </div>
+     
       <div className="categories">
         {loading ? (
           <LoadingSkeleton />

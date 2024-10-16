@@ -48,7 +48,7 @@ const Home: React.FC = () => {
               navigate(home.hero_section?.primary_cta ?? "");
             }}
           >
-            View Our Menu
+            View Our Services
           </Button>
         </div>
       </div>

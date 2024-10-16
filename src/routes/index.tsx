@@ -11,6 +11,8 @@ import { fetchInitialData } from "../api";
 import { useDispatch } from "react-redux";
 import LoadingScreen from "../components/LoadingScreen";
 import { NotFound } from "../components/NotFound";
+import About from "../components/aboutUs/About";
+import News from "../components/news/News";
 
 const AppRoutes: React.FC = () => {
   const dispatch = useDispatch();
@@ -34,9 +36,10 @@ const AppRoutes: React.FC = () => {
             <div className="body">
               <Routes>
                 <Route path="/" element={<Home />} />
-                {/* COMMENT: Replace below element from <NotFound /> to <Menu /> */}
+              
                 <Route path="/menu" element={<Menu />} />
-                <Route path="*" element={<NotFound />} />
+                <Route path="/about-us" element={<About />} />
+                <Route path="/contact" element={<News />} />
               </Routes>
             </div>
             <Footer />
