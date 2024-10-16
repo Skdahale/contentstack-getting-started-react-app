@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import Home from "../components/home/Home";
+import { onEntryChange } from "../sdk/utils";
+
 // COMMENT: Uncomment below import statement
 import Menu from "../components/menu/Menu";
 import { fetchInitialData } from "../api";
@@ -15,8 +17,11 @@ const AppRoutes: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchInitialData(dispatch, setLoading);
+    onEntryChange(() => {
+      fetchInitialData(dispatch, setLoading);
+    });
   }, [dispatch]);
+
 
   return (
     <Router>
