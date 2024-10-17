@@ -110,12 +110,9 @@ import './News.css';
 // export default News;
 
 
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { ReactComponent as Tractor } from './tractor.svg';
 import { ReactComponent as Try1 } from './try1.svg';
 import { ReactComponent as Try2 } from './try2.svg';
@@ -129,7 +126,7 @@ import { BsPeople } from 'react-icons/ai';
 import './ImageSlider.css'; // Import your custom CSS file
 
 function News() {
-    const settings_ = {
+    const settings = {
         dots: true,
         infinite: true,
         speed: 800,
@@ -137,34 +134,28 @@ function News() {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
-        className: 'absolute -top-20 m-0 ', // Add a custom class name to the slider
+        className: 'image-slider', // Add a custom class name to the slider
     };
     return (
-        <div className="max-w-full overflow-y-auto overflow-x-hidden">
+        <div>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
          
-            <Carousel {...settings_} >
-            <div>
-            <img src="./try1.svg" />
-            <p className="legend">Watch</p>
-             {/* <Try1></Try1> */}
-               </div>
-               <div>
-               <img src="./try1.svg" />               
-            <p className="legend">Watch</p>
-             </div>
-             <div>
-             <img src="./try1.svg" />
-             
-            <p className="legend">Watch</p>
-            </div>
-               
-            </Carousel>
+            <Slider {...settings}>
+                <div>
+                    <Try1></Try1>
+                </div>
+                <div>
+                    <Try2></Try2>
+                </div>
+                <div>
+                    <Try3></Try3>
+                </div>
+            </Slider>
 
             <table className="mb-0">
                 <tr>
                     <td>
-                    <img src="./seed_bg.jpg" alt="" style={{height:"300px",width:"400px"}} />
+                    <img src="./seed_bg.jpg" alt="" style={{height:"300px",width:"400px"}} className="m-5"/>
                     </td>
                     <td className="align-top">
                         <div className="headline-card my-5 mr-3" style={{ marginRight: '1rem',minWidth:'200px' }}>
@@ -194,7 +185,7 @@ function News() {
                 <br></br>
                 <tr>
                 <td>
-                <img src="./seed_bg.jpg" alt="" style={{height:"300px",width:"400px"}}  className="m-5 mt-0"/>
+                <img src="./images/picture5.jpeg" alt="" style={{height:"300px",width:"400"}}  className="m-5 mt-0"/>
                     </td>
                     <td className="align-top">
                         <div className="headline-card my-5 mr-3" style={{ marginRight: '1rem',minWidth:'200px' }}>
@@ -218,25 +209,26 @@ function News() {
                     </td>
                 </tr>
             </table>
-            <Carousel {...settings_} >
-            <div>
-            <img src="./try1.svg" />
-               </div>
-               <div>
-               <img src="./try1.svg" />      
-             </div>
-             <div>
-             <img src="./try1.svg" />
-            </div>
-               
-            </Carousel>
+
+            <Slider {...settings}>
+                <div>
+                    <img src="./images/picture1.png" alt="" style={{height:"250px",width:"100%"}}></img>
+                </div>
+                <div>
+                <img src="./images/picture2.png" alt="" style={{height:"250px",width:"100%"}}></img>
+                </div>
+                <div>
+                <img src="./images/picture3.png" alt="" style={{height:"250px",width:"100%"}}></img>
+
+                </div>
+            </Slider>
         
-            <table className="mt-8">
-                <tr className="border border-2">
+            <table>
+                <tr>
                      <td>
-                     <img src="./seed_bg.jpg" alt="" style={{height:"270px",width:"200"}}  className="m-4 p-4"/>
+                     <img src="./images/drone.jpg" alt="" style={{height:"270px",width:"200"}}  className="m-5"/>
                     </td>
-                    <td className="align-top ">
+                    <td className="align-top">
                         <div className="headline-card my-5 mr-3" style={{ marginRight: '1rem',minWidth:'200px' }}>
                             <div className="headline-by mb-1 align-top">
                                 <span className="headluine-date h5" style={{color:"rgb(7, 155, 39)"}}>29 Jan 2023</span>
@@ -258,10 +250,9 @@ function News() {
                     </td>
                 </tr>
                 <br></br>
-
-                <tr className="border border-2 border-gray-950">
+                <tr>
                      <td>
-                     <img src="./seed_bg.jpg" alt="" style={{height:"270px",width:"200"}}  className="m-5 mt-0"/>
+                     <img src="./images/picture7.jpeg" alt="" style={{height:"270px",width:"200"}}  className="m-5 mt-0"/>
                     </td>
                     <td className="align-top">
                         <div className="headline-card my-5 mr-3" style={{ marginRight: '1rem',minWidth:'200px' }}>
@@ -289,9 +280,9 @@ function News() {
             <div className='bottom-info'>
 
                 <div className="bottom-body">
-                    <div className=" fw-bold">Helping a local </div>
-                    <div className="text-green mt-4 " style={{color:"rgb(7, 155, 39)"}}>business reinvent itself</div>
-                    <span className="">
+                    <span className="bottom-text1 fw-bold h3 m-0 p-0">Helping a local </span>
+                    <div className="bottom-text-div"><span className="bottom-text2 fw-bold h2 m-0 p-0" >business reinvent itself</span></div>
+                    <span className="bottom-text3">
                         We reached here with our hard work and dedication
                     </span>
                 </div>
@@ -319,7 +310,7 @@ function News() {
             </div>
 
             <div className="Plant-icon">
-            <img src="./Plant.svg" alt=""  style={{height:"270px",width:"200"}}/>
+            <img src="./images/plant1.png" alt=""  style={{height:"270px",width:"200"}}/>
             </div>
 
             </div>

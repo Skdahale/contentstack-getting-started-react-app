@@ -27,7 +27,7 @@ const AppRoutes: React.FC = () => {
 
   return (
     <Router>
-      <div className="app">
+      <div className="app  max-w-full overflow-y-auto overflow-x-hidden">
         {loading ? (
           <LoadingScreen />
         ) : (

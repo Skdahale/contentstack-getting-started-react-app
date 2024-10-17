@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className={`header ${isOpen ? "open" : ""}`}>
+    <div className={`header ${isOpen ? "open" : ""} max-w-full overflow-y-auto overflow-x-hidden`}>
       <div className="logo-menu">
         <Link to="/">
           <img src={logo?.url} alt="Logo" />
