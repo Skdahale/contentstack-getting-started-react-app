@@ -19,6 +19,7 @@ import { ReactComponent as Try3 } from './try3.svg';
 
 import '../news/ImageSlider.css'; // Import your custom CSS file
 
+
 class News extends React.Component {
 
     constructor(props) {
@@ -59,9 +60,37 @@ class News extends React.Component {
         }));
     };
 
-    handleMouseEnter() {
-        this.setState({ isDropdownOpen: true });
-    }
+// class News extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             newsArticles: [],
+//             isPopupVisible: false,
+//             isPopupVisible1: false,
+//             isDropdownOpen: false,
+//         };
+//         this.handleMouseEnter = this.handleMouseEnter.bind(this);
+//         this.handleMouseLeave = this.handleMouseLeave.bind(this);
+//     }
+
+//     componentDidMount() {
+//         // Fetch agriculture-related news from an API or service
+//         // NewsService.getLatestNews().then(response => {
+//         //     this.setState({ newsArticles: response.data });
+//         // });
+//     }
+
+//     togglePopup = () => {
+//         this.setState((prevState) => ({
+//             isPopupVisible: !prevState.isPopupVisible,
+//         }));
+//     };
+
+//     togglePopup1 = () => {
+//         this.setState((prevState) => ({
+//             isPopupVisible1: !prevState.isPopupVisible1,
+//         }));
+//     };
 
     handleMouseLeave() {
         this.setState({ isDropdownOpen: false });
@@ -91,16 +120,6 @@ class News extends React.Component {
                     </div>
                 )}
 
-                {this.state.isPopupVisible1 && (
-                    <div id="myPopup" className="popup">
-                        <div className="popup-content">
-                            <span className="close" onClick={this.togglePopup1}>&times;</span>
-                            {/* <p><DisplayNews></DisplayNews></p> */}
-                        </div>
-                    </div>
-                )}
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-                {/* <TopBar></TopBar> */}
 
                 <Slider {...settings}>
                     <div>
