@@ -18,7 +18,7 @@ const Home: React.FC = () => {
     return text
       .split(" ")
       .map((char, index) =>
-        index % 2 === 1 ? <span className="italic">{char}</span> : char
+        index % 2 === 1 ? <span className="">{char}</span> : char
       )
       .reduce(
         (acc, curr) => (
@@ -41,7 +41,7 @@ const Home: React.FC = () => {
         <div className="hero-content">
           <h1>{styleAlternateWords(home.hero_section?.heading || "")}</h1>
           <p>{home.hero_section?.description}</p>
-          <Button
+          {/* <Button
             size="large"
             className="cta-button"
             onClick={() => {
@@ -49,9 +49,10 @@ const Home: React.FC = () => {
             }}
           >
             View Our Services
-          </Button>
+          </Button> */}
         </div>
       </div>
+      
     </div>
   );
 };
